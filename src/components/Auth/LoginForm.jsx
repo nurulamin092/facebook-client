@@ -18,7 +18,7 @@ const LoginForm = () => {
         className="border-b border-[#3F3F3F] pb-10 lg:pb-[60px]"
         onSubmit={handleSubmit(submitForm)}
       >
-        <Field label="Email">
+        <Field label="Email" error={errors.email}>
           <input
             {...register("email", { required: "Email Id is Required" })}
             className={`auth-input ${
@@ -29,7 +29,7 @@ const LoginForm = () => {
             id="email"
           />
         </Field>
-        <Field label="Password">
+        <Field label="Password" error={errors.password}>
           <input
             {...register("password", {
               required: "Password Id is Required",
