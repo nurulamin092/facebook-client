@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import LogoutImg from "../../assets/icons/logout.svg";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../hooks";
 
 const Logout = () => {
   const { setAuth } = useAuth();

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "../components/common/Header";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../hooks/";
 
 const HomePage = () => {
   const { auth } = useAuth();
