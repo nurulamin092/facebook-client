@@ -12,35 +12,35 @@ const PostHeaders = ({ post }) => {
   return (
     <>
       {" "}
-      <header class="flex items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
+      <header className="flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
           <img
-            class="max-w-10 max-h-10 rounded-full lg:max-h-[58px] lg:max-w-[58px]"
+            className="max-w-10 max-h-10 rounded-full lg:max-h-[58px] lg:max-w-[58px]"
             src={avatarUrl}
             alt="avatar"
           />
           <div>
-            <h6 class="text-lg lg:text-xl">{post?.author?.name}</h6>
-            <div class="flex items-center gap-1.5">
+            <h6 className="text-lg lg:text-xl">{post?.author?.name}</h6>
+            <div className="flex items-center gap-1.5">
               <img src={TimeIcon} alt="time" />
-              <span class="text-sm text-gray-400 lg:text-base">
+              <span className="text-sm text-gray-400 lg:text-base">
                 {`${getDateDifferenceFromNow(post?.createAt)}ago`} min ago
               </span>
             </div>
           </div>
         </div>
 
-        <div class="relative">
+        <div className="relative">
           <button onClick={() => setShowActions(!showActions)}>
             <img src={ThreeDotIcon} alt="3dots of Action" />
           </button>
           {showActions && (
-            <div class="action-modal-container">
-              <button class="action-menu-item hover:text-lwsGreen">
+            <div className="action-modal-container">
+              <button className="action-menu-item hover:text-lwsGreen">
                 <img src={EditIcon} alt="Edit" />
                 Edit
               </button>
-              <button class="action-menu-item hover:text-red-500">
+              <button className="action-menu-item hover:text-red-500">
                 <img src={DeleteIcon} alt="Delete" />
                 Delete
               </button>

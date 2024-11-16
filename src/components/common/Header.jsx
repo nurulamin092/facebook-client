@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import LogoImg from "../../assets/images/logo.svg";
 import HomeImg from "../../assets/icons/home.svg";
 import NotificationImg from "../../assets/icons/notification.svg";
-import AvatarImg from "../../assets/images/avatars/avatar_1.png";
+import defaultAvatar from "../../assets/images/avatars/avatar_1.png";
 import Logout from "../auth/Logout";
 import { useAuth, useProfile } from "../../hooks";
 const Header = () => {
@@ -32,16 +32,21 @@ const Header = () => {
             </button>
             <Logout />
 
-            <button className="flex-center !ml-8 gap-3">
+            <Link to="/me" className="flex-center !ml-8 gap-3">
               <span className="text-lg font-medium lg:text-xl">
                 {user?.firstName} {user?.lastName}
               </span>
               <img
                 className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px]"
-                src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user.avatar}`}
+                // src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user.avatar}`}
+                src={
+                  user?.avatar
+                    ? `${import.meta.env.VITE_SERVER_BASE_URL}/${user?.avatar}`
+                    : defaultAvatar
+                }
                 alt="Avatar"
               />
-            </button>
+            </Link>
           </div>
         </div>
       </nav>

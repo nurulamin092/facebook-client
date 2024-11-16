@@ -1,6 +1,5 @@
 import { useProfile } from "../../hooks";
 import Bio from "./Bio";
-import MyPosts from "./MyPosts";
 import ProfileImage from "./ProfileImage";
 
 const ProfileInfo = () => {
