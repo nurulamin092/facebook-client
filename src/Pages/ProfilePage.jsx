@@ -6,8 +6,6 @@ import { useProfile, useAxios, useAuth } from "../hooks";
 
 const ProfilePage = () => {
   const { state, dispatch } = useProfile();
-  const { user, posts } = state;
-  console.log(posts);
   const { api } = useAxios();
   const { auth } = useAuth();
 
@@ -32,9 +30,10 @@ const ProfilePage = () => {
     fetchProfile();
   }, []);
 
-  // if (loading) {
-  //   return <div>Fetching your profile data.....</div>;
-  // }
+  if (state?.loading) {
+    return <div> Fetching your Profile data...</div>;
+  }
+
   return (
     <>
       <ProfileInfo />

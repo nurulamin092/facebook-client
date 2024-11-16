@@ -20,7 +20,7 @@ const profileReducer = (state, action) => {
                 ...state,
                 loading: false,
                 user: action.data.user,
-                posts: action.data.post
+                posts: action.data.posts
             }
         }
 

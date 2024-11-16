@@ -23,8 +23,14 @@ const ProfileImage = () => {
         formData.append("avatar", file);
       }
 
+      // const response = await api.post(
+      //   `${import.meta.env.VITE_SERVER_BASE_URL}/profile/${user?.id}/avatar`,
+      //   formData
+      // );
       const response = await api.post(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/profile/${user?.id}/avatar`,
+        `${import.meta.env.VITE_SERVER_BASE_URL}/profile/${
+          state?.user?.id
+        }/avatar`,
         formData
       );
       if (response.status === 200) {
