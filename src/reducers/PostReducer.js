@@ -9,7 +9,6 @@ const initialState = {
 const postReducer = (state, action) => {
     switch (action.type) {
         case actions.post.DATA_FETCHING:
-
             {
                 return {
                     ...state,
@@ -19,8 +18,9 @@ const postReducer = (state, action) => {
         case actions.post.DATA_FETCHED: {
             return {
                 ...state,
+                posts: action.data,
                 loading: false,
-                error: action.error
+
             }
         }
 
