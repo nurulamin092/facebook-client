@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { actions } from "../actions";
+import NewPost from "../components/posts/NewPost";
 import PostList from "../components/posts/PostList";
 
 import { useAxios, usePost } from "../hooks";
@@ -42,9 +43,10 @@ const HomePage = () => {
   }
 
   return (
-    <div>
+    <>
+      <NewPost />
       <PostList posts={state?.posts} />
-    </div>
+    </>
   );
 };
 
