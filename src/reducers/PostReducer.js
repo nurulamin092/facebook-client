@@ -42,11 +42,12 @@ const postReducer = (state, action) => {
             }
         }
 
+
         case actions.post.POST_DELETED: {
             return {
                 ...state,
                 loading: false,
-                post: [...state.posts.filter((item) => item.id !== action.data)]
+                posts: [...state.posts.filter((item) => item.id !== action.data)]
             }
         }
 
